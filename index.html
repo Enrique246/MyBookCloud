@@ -3,20 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MyBookCloud</title>
+    <title>Weather Dashboard</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400&family=Merriweather:wght@700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./assets/style.css" />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     />
   </head>
+ <h1 class="hbackground">Weather Dashboard</h1>
 
   <body>
-        <div class="container position-absolute top-0 start-0">
-        <div class="row col-sm">
-           <div class="">
+    <!-- Row 1 -->
+
+   
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 col-md-3 p-2">
           <h2>Search for a City: <span id="result-text"></span></h2>
-          <br>
+          <br />
           <div id="result-content"></div>
           <form id="search-form" class="mb-2">
             <input
@@ -25,22 +33,36 @@
               type="text"
               placeholder="Search!"
             />
-            <br>
-            <br>
+            <br />
+            <br />
             <button class="btn btn-info btn-block">Search</button>
           </form>
-          
-  
+          <!-- Recently searched -->
+          <div class="p-search" id="p-search-b"></div>
         </div>
-        <div class="col-md">Show results for </div>
-        </div>
-  
-        
-      </div>
-  
-      <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-      <script src="./assets/js/display-search.js"></script>
-    </body>
 
+        <!-- Weather results -->
+        <div class="col-12 col-md-9">
+          <h3 class="ml-5">Search results for</h3>
+          <!-- Choosed city forecast -->
+          <div class="row border choosed-city" id="present-forecast">
+            <div class="col-12">
+            <h2 id="current-city"></h2>
+            <div id="selected-weather-box" class="list-group-item"></div>
+            </div>
+          </div>
+
+          <!-- 5 day forecast -->
+          <div class="row" id="five-forecast">
+          <h2 class="col-12" id="especulation"></h2>
+          <div class="d-flex" id="five-box"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/script.js"></script>
   </body>
+</html>
