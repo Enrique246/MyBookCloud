@@ -37,6 +37,18 @@ var searchFormEl = document.querySelector('#search-form');
      }
 
  searchApi();
+
+ function printResults(resultObj) {
+    console.log(resultObj);
+  
+    // set up `<div>` to hold result content
+    var resultCard = document.createElement('div');
+    resultCard.classList.add('card', 'bg-light', 'text-dark', 'mb-3', 'p-3');
+
+ }
+//  for (var i = 0; i < locRes.results.length; i++) {
+//     printResults(locRes.results[i]);
+//   }
   
 //   function handleSearchFormSubmit(event) {
 //     event.preventDefault();
