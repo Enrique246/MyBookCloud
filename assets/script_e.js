@@ -34,8 +34,9 @@ function searchApi () {
     // Print Results
        function printResults(resultObj) {
            resultContentEl.textContent = "";
-        //    var bookSearched = document.getElementById("search-form-nyt").value;
-        //    sResultBy.innerHTML = bookSearched;
+        var bookSearched = document.getElementById("search-form-nyt").value;
+        var sResultBy = document.getElementById("sResultBy");
+        sResultBy.innerHTML = bookSearched;
     
           
             console.log(resultObj);
