@@ -4,9 +4,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Weather Dashboard</title>
+  <title>My Book Cloud</title>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400&family=Merriweather:wght@700&display=swap"
     rel="stylesheet" />
+  <!-- AJAX -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- Main CSS -->
   <link rel="stylesheet" href="./assets/style.css" />
   <!-- Foundation: Compressed CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
@@ -36,8 +39,42 @@
             <br />
             <p><a href="#" class="button margin-top-4">Simple Button</a><br />
           </div>
+
+          <select id="format-input" class="form-input w-100">
+            <option value="relevance">Order by relevance</option>
+            <option value="newest">Order by newest</option>
+          </select>
+
+          <button type="submit" class="form-button margin-bottom-2" id="submit-btn">Search</button>
+
+          <!-- <div class="switch small">
+            <input class="switch-input" id="exampleRadioSwitch1" type="radio" checked name="testGroup">
+            <label class="switch-paddle" for="exampleRadioSwitch1">
+              <span class="show-for-sr">Search default</span>
+            </label>
+            <div class="badge secondary">None</div>
+          </div>
+          
+          <div class="switch small">
+            <input class="switch-input" id="exampleRadioSwitch2" type="radio" name="testGroup">
+            <label class="switch-paddle" for="exampleRadioSwitch2">
+              <span class="show-for-sr">Search by newest</span>
+            </label>
+            <div class="badge primary">Newest</div>
+          </div>
+
+          <div class="switch small">
+            <input class="switch-input" id="exampleRadioSwitch3" type="radio" name="testGroup">
+            <label class="switch-paddle" for="exampleRadioSwitch3">
+              <span class="show-for-sr">Search by relevance</span>
+            </label>
+            <div class="badge warning">Relevance</div>
+          </div> -->
+
         </form>
+
         <div>
+
           <form id="search-form-nyt" class="margin-bottom-2 large-5 cell">
             <div class="form-group small-12 medium-3 large-5 cell">
               <label for="exampleFormControlInput1">Search for Best Sellers</label>
@@ -61,15 +98,26 @@
 
 
       <!-- Weather results -->
-      <div class="small-12 medium-9 large-7 columns">
-        <h3 class="margin-left-5">Search results for: <span id="searResultBy">intentionaly blank</span></h3>
-        <!-- Choosed city forecast -->
-        <div class="row border choosed-city" id="present-forecast">
-          <div class="col-12">
-            <h2 id="current-book"></h2>
-            <div id="selected-book-box" class="list-group-item"></div>
+      <!-- <div class="col-12 col-md-9 p-3 text-light">
+        <h2>Showing results for <span id="result-text"></span></h2>
+        <div id="result-content"></div>
+      </div> -->
+
+      <div class="row">
+        <div class="col l6">
+          <div class="card">
+            <div class="card-content black-text">
+              <span class="card-title">Your Results</span>
+
+              <div id="results-container">
+
+              </div>
+            </div>
           </div>
         </div>
+      </div>
+
+
 
         <!-- 5 day forecast --Wont be needed, keepining comented as a reference -->
         <!-- <div class="row" id="five-forecast">
