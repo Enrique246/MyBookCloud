@@ -1,0 +1,41 @@
+body {
+  padding: 0px;
+  margin: 0px;
+}
+
+.header, .footer {
+  background-color: #ddd;
+}
+
+h1, h3 {
+  text-align: center;
+}
+
+#bold-letter{
+  font-weight: bold;
+}
+
+/* Letter specific individual colors */
+#capLetters {
+  color: rgb(43, 138, 216);
+}
+#lowCase{
+  color: antiquewhite;
+}
+
+/* Header abd vertical banner backgrounds */
+#head-color{
+  background-color: rgb(0, 0, 0);
+}
+#vertical-bgd-left{
+  background-color: rgb(67, 187, 235);
+}
+
+/* Form input size */
+.form-control{
+  width: 100%;
+}
+
+.button{
+  border-radius: 4px;
+}
