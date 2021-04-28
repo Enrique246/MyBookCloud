@@ -7,7 +7,13 @@
     <title>My Book Cloud - find the best sellers in this place</title>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400&family=Merriweather:wght@700&display=swap"
         rel="stylesheet" />
+
+    <!-- AJAX
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+
+    <!-- Main CSS -->
     <link rel="stylesheet" href="./assets/CSS/style_N.css" />
+
     <!-- Foundation: Compressed CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
         integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
@@ -44,30 +50,34 @@
 
                     <!-- intentional space for control-->
                     <!--GOOGLE SEARCH-->
-                    <form id="search-form-G">
+                    <form action="#" method="get" id="search-form-G">
                         <div class="grid-x grid-padding-x">
-                            <div class="cell small-12">
+                            <div class="form-group cell small-12">
                                 <label for="exampleFormControlInput1">Search for Author</label>
                                 <input type="search-input-G" class="form-control" id="exampleFormControlInput1"
                                     placeholder="Results by Google">
-                                <p><a href="#" class="button round margin-top-4">GO 🚀 </a><br />
                             </div>
                         </div>
-                    </form>
+                        <select id="format-input1" class="form-input w-100">
+                            <option value="relevance">Order by relevance</option>
+                            <option value="newest">Order by newest</option>
+                        </select>
+                        <p><a href="#" id="submit-btn1" class="button round margin-top-4">GO 🚀 </a><br />
+            </form>
                     <!--NYT SEARCH-->
                     <form id="search-form-nyt">
                         <div class="grid-x grid-padding-x">
                             <div class="cell small-12">
-                                <label for="exampleFormControlInput1">Search for Best Sellers</label>
-                                <input type="search-input-nyt" class="form-control" id="exampleFormControlInput1"
+                                <label for="exampleFormControlInput2">Search for Best Sellers</label>
+                                <input type="search-input-nyt" class="form-control" id="exampleFormControlInput2"
                                     placeholder="Select Genere">
-                                    <select>
-                                        <option value="Romance">Romance</option>
-                                        <option value="Mystery">Mystery</option>
-                                        <option value="Fantasy & Sci-Fi">Fantasy & Sci-Fi</option>
-                                        <option value="Thrillers">Thrillers</option>
-                                        <option value="Young Adult">Young Adult</option>
-                                    </select>
+                                <select>
+                                    <option value="Romance">Romance</option>
+                                    <option value="Mystery">Mystery</option>
+                                    <option value="Fantasy & Sci-Fi">Fantasy & Sci-Fi</option>
+                                    <option value="Thrillers">Thrillers</option>
+                                    <option value="Young Adult">Young Adult</option>
+                                </select>
                                 <p><a href="#" class="button">GO 🚀 </a><br />
                             </div>
                         </div>
@@ -78,8 +88,21 @@
 
                 <!--Right Cell/Column = Cards Column-->
                 <div class="cell medium-8 medium-cell-block-y">
-                    <h2>Show Results for Top 10 out of selection</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lacus odio, accumsan id
+                    <div class="row">
+                        <div class="col l6">
+                            <div class="card" id="results-container">
+                                <div class="card-content black-text">
+                                    <span class="card-title">Your Results</span>
+
+                                    <div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <h2>Show Results for Top 10 out of selection</h2> -->
+                    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lacus odio, accumsan id
                         ullamcorper eget, varius nec erat. Nulla facilisi. Donec dui felis, euismod nec finibus
                         vitae,
                         dapibus quis arcu. Maecenas tempor et ipsum quis venenatis. Ut posuere sed augue sit amet
@@ -139,7 +162,7 @@
                         ornare
                         velit suscipit tempor. Curabitur pretium nisl id lorem placerat consequat. In quis quam
                         eros.
-                        Nam mattis elit eu quam sagittis, in varius erat tempor.</p>
+                        Nam mattis elit eu quam sagittis, in varius erat tempor.</p> -->
 
                 </div>
             </div>
@@ -149,11 +172,16 @@
         </div>
 
     </div>
-    <script>
+    <!-- <script>
         $(document).ready(function() {
            $(document).foundation();
         })
-     </script>
+     </script> -->
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="./assets/script.js"></script>
+
+
 </body>
 
 </html>π
