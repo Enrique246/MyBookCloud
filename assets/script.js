@@ -117,7 +117,7 @@ fetch(URL)
            resultContentEl.innerHTML='<h3>No results found, search again!</h3>'
        }
      else {
-        //resultContentEl.textContent = '';
+        resultContentEl.textContent = '';
         for (var i = 0; i < locRes.results.length; i++) {
           printResults(locRes.results[i]);
           console.log(locRes);
@@ -127,19 +127,28 @@ fetch(URL)
       }
     })
    };
+function displayTitle(){
+   var bookSearched = document.getElementById("search-form-nyt").value;
+   var sResultBy = document.getElementById("sResultBy");
+   sResultBy.innerHTML = bookSearched;
+   console.log(sResultBy);   
+};
+displayTitle();
 
+   //console.log(bookSearched);
 // Print Results
    function printResults(resultObj) {
        resultContentEl.textContent = "";
     //    var bookSearched = document.getElementById("search-form-nyt").value;
+    //    var sResultBy = document.getElementById("sResultBy");
     //    sResultBy.innerHTML = bookSearched;
 
-      
+      console.log(sResultBy);
         console.log(resultObj);
 
        //Book result container ('div')
        var resultCard = document.createElement('div');
-       resultCard.classList = "card, background-success, color-dark"
+       resultCard.classList = "card, background-success, color-dark";
        var resultBody = document.createElement('div');
        resultBody.classList.add('card-body');
        resultCard.append(resultBody);
