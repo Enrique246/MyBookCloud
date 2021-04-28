@@ -11,23 +11,9 @@
   <!-- Foundation: Compressed CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
     integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
-  <!-- Foundation: Compressed JavaScript -->
-  <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
-    integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
-  <!-- foundation-float.min.css: Compressed CSS with legacy Float Grid -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation-float.min.css"
-    integrity="sha256-4ldVyEvC86/kae2IBWw+eJrTiwNEbUUTmN0zkP4luL4=" crossorigin="anonymous">
-  <!-- foundation-prototype.min.css: Compressed CSS with prototyping classes -->
-  <link rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation-prototype.min.css"
-    integrity="sha256-BiKflOunI0SIxlTOOUCQ0HgwXrRrRwBkIYppEllPIok=" crossorigin="anonymous">
-  <!-- foundation-rtl.min.css: Compressed CSS with right-to-left reading direction -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation-rtl.min.css"
-    integrity="sha256-F+9Ns8Z/1ZISonBbojH743hsmF3x3AlQdJEeD8DhQsE=" crossorigin="anonymous">
-
 </head>
 
-<div class="large-12 cell">
+<div class="title-web">
   <h1>My Book Cloud</h1>
 </div>
 
@@ -36,22 +22,24 @@
 
   <div class="expanded">
     <!--BS: container-fluid-->
-    <div class="row">
-      <div class="small-12 medium-3 large-5 columns">
+    <div class="medium-cell-block-container grid-x grid-frame">
+      <div class="small-12 medium-3 large-5 cell">
         <!--BS: col-12 col-md-3 p-2-->
         <h2>Search for a Book: <span id="result-text"></span></h2>
         <br />
         <div id="result-content"></div>
-        <form id="search-form-G" class="margin-bottom-2">
-          <div class="form-group">
+        <form id="search-form-G">
+          <div class="form-group large-5 cell">
             <label for="exampleFormControlInput1">Search for Author</label>
             <input type="search-input-G" class="form-control" id="exampleFormControlInput1"
               placeholder="Results by Google">
+            <br />
+            <p><a href="#" class="button margin-top-4">Simple Button</a><br />
           </div>
         </form>
         <div>
-          <form id="search-form-nyt" class="margin-bottom-2">
-            <div class="form-group">
+          <form id="search-form-nyt" class="margin-bottom-2 large-5 cell">
+            <div class="form-group small-12 medium-3 large-5 cell">
               <label for="exampleFormControlInput1">Search for Best Sellers</label>
               <input type="search-input-nyt" class="form-control" id="exampleFormControlInput1"
                 placeholder="Results by NY-Times Bestsellers">
