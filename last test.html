@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Book Cloud - find the best sellers in this place</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400&family=Merriweather:wght@700&display=swap"
+        rel="stylesheet" />
+
+    <!-- AJAX
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="./assets/CSS/style_N.css" />
+
+    <!-- Foundation: Compressed CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
+        integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
+</head>
+
+
+<body>
+    <div class="grid-y medium-grid-frame">
+        <!--Setup a vertical cont-->
+        <div class="cell shrink header medium-cell-block-container" id="head-color">
+            <!-- medium cell block cont allows os to scroll -->
+            <h1> <span id="capLetters">M</span><span id="lowCase">y</span><span id="capLetters">B</span><span
+                    id="lowCase">ook</span><span id="capLetters">C</span><span id="lowCase">loud</span> <span
+                    id="capLetters"> [ MBC ]</span> </h1>
+            <div class="grid-x padding-gutters">
+                <div class="cell text-center">
+                    <p> MBC is a place where you can search for the best seller books by gener or by the NewYork Times
+                        list</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cell medium-auto medium-cell-block-container">
+            <div class="grid-x grid-padding-x">
+                <div class="cell medium-4 medium-cell-block-y" id="vertical-bgd-left">
+                    <h3 id="bold-letter">Search for a Book 🔎 </h3>
+                    <!--search normal, bien espaciado-->
+                    <!-- <div class="input-group input-group-rounded">
+                        <input class="input-group-field" type="search">
+                        <div class="input-group-button">
+                            <input type="submit" class="button secondary" value="Search">
+                        </div>
+                    </div> -->
+
+                    <!-- intentional space for control-->
+                    <!--GOOGLE SEARCH-->
+                    <form action="#" method="get" id="search-form-G">
+                        <div class="grid-x grid-padding-x">
+                            <div class="form-group cell small-12">
+                                <label for="exampleFormControlInput1">Search for Author</label>
+                                <input type="search-input-G" class="form-control" id="exampleFormControlInput1"
+                                    placeholder="Results by Google">
+                            </div>
+                        </div>
+                        <select id="format-input1" class="form-input w-100">
+                            <option value="relevance">Order by relevance</option>
+                            <option value="newest">Order by newest</option>
+                        </select>
+                        <p><a href="#" id="submit-btn1" class="button round margin-top-4">GO 🚀 </a><br />
+            </form>
+                    <!--NYT SEARCH-->
+                    <form id="search-form-nyt">
+                        <div class="grid-x grid-padding-x">
+                            <div class="cell small-12">
+                                <label for="exampleFormControlInput2">Search for Best Sellers</label>
+                                <input type="search-input-nyt" class="form-control" id="exampleFormControlInput2"
+                                    placeholder="Select Genere">
+                                <select>
+                                    <option value="Romance">Romance</option>
+                                    <option value="Mystery">Mystery</option>
+                                    <option value="Fantasy & Sci-Fi">Fantasy & Sci-Fi</option>
+                                    <option value="Thrillers">Thrillers</option>
+                                    <option value="Young Adult">Young Adult</option>
+                                </select>
+                                <p><a href="#" class="button">GO 🚀 </a><br />
+                            </div>
+                        </div>
+                    </form>
+                    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lacus odio, accumsan id et
+                        ornare justo. Integer in dui cursus, dignissim tortor a, hendrerit risus.</p> -->
+                </div>
+
+                <!--Right Cell/Column = Cards Column-->
+                <div class="cell medium-8 medium-cell-block-y">
+                    <div class="row">
+                        <div class="col l6">
+                            <div class="card" id="results-container">
+                                <div class="card-content black-text">
+                                    <span class="card-title">Your Results</span>
+
+                                    <div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <h2>Show Results for Top 10 out of selection</h2> -->
+                    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lacus odio, accumsan id
+                        ullamcorper eget, varius nec erat. Nulla facilisi. Donec dui felis, euismod nec finibus
+                        vitae,
+                        dapibus quis arcu. Maecenas tempor et ipsum quis venenatis. Ut posuere sed augue sit amet
+                        efficitur. Sed imperdiet, justo id tempus rhoncus, est est viverra turpis, non vulputate
+                        magna
+                        lectus et nisl. Pellentesque ultrices porttitor vehicula. Ut aliquet efficitur ligula, a
+                        consectetur felis. Proin tristique ut augue nec luctus. Curabitur a sapien pretium, auctor
+                        elit
+                        a, efficitur erat. Donec tincidunt dui vel velit bibendum euismod. Cras vitae nibh dui.
+                        Aliquam
+                        erat volutpat. Etiam sit amet arcu a erat efficitur facilisis. Ut viverra dapibus turpis, et
+                        ornare justo. Integer in dui cursus, dignissim tortor a, hendrerit risus.</p>
+
+                    <p>Suspendisse pulvinar, massa iaculis feugiat lobortis, dolor sapien vestibulum nulla, vel
+                        cursus
+                        tellus leo in lorem. Aliquam eu placerat urna. Suspendisse sed viverra orci, ut mattis
+                        neque.
+                        Fusce non ultrices nisi. In sagittis varius mollis. Quisque dolor quam, consectetur eu
+                        lacinia
+                        ac, ullamcorper vel arcu. Nullam mattis imperdiet nulla sed ornare. Praesent tristique, est
+                        id
+                        eleifend vestibulum, neque nibh condimentum ex, nec lobortis purus justo a libero. Phasellus
+                        id
+                        ex ac nunc hendrerit hendrerit. Nullam urna ipsum, rutrum at fringilla vel, venenatis non
+                        purus.
+                        Maecenas egestas ex vitae venenatis molestie. Ut et odio egestas, accumsan neque et, viverra
+                        nisl. Sed faucibus nec nulla sed imperdiet. Fusce quis sem ac urna semper tempor a id elit.
+                        Nulla fringilla vitae sapien a vehicula.</p>
+
+                    <p>Nullam vestibulum lorem nec lectus egestas, nec ullamcorper diam maximus. Maecenas
+                        condimentum,
+                        nibh at blandit semper, ex erat tempus magna, id maximus neque velit accumsan nibh. Aenean
+                        dignissim lorem eu nisl laoreet vestibulum. Vivamus efficitur et augue vitae tincidunt.
+                        Etiam et
+                        magna felis. Integer mattis, nisi aliquet scelerisque blandit, ex mi sodales ante, eget
+                        accumsan
+                        quam magna et ligula. Curabitur id tristique leo. Proin rutrum mi vitae enim rhoncus, at
+                        cursus
+                        neque eleifend. Integer ultrices volutpat tellus ac porta. Fusce sollicitudin venenatis
+                        lacinia.
+                        Fusce ante lorem, gravida semper varius non, pharetra non erat. Sed dapibus arcu turpis, ac
+                        sollicitudin nibh lacinia vel. Nullam at enim porta, luctus metus sit amet, rutrum odio.
+                        Cras
+                        tempor enim vel pellentesque sollicitudin. Maecenas ullamcorper, sem non accumsan volutpat,
+                        neque tortor pulvinar orci, ut ultrices ligula lorem ut risus.</p>
+
+                    <p>Aliquam facilisis, nibh eget posuere suscipit, arcu sapien iaculis odio, in molestie dolor
+                        lectus
+                        vitae sem. Cras id nunc mollis mi rutrum dapibus. Quisque rutrum a augue at scelerisque.
+                        Praesent faucibus ac enim vitae gravida. Sed et sodales elit. Duis magna lectus, interdum
+                        sit
+                        amet metus a, sagittis varius magna. Proin nibh lectus, egestas a luctus ut, dapibus et
+                        enim.
+                        Curabitur fringilla ipsum vitae nunc imperdiet consectetur eget non neque. Suspendisse
+                        ultricies
+                        odio quis lorem vulputate, ac vulputate turpis feugiat. Maecenas posuere rhoncus orci, in
+                        ornare
+                        velit suscipit tempor. Curabitur pretium nisl id lorem placerat consequat. In quis quam
+                        eros.
+                        Nam mattis elit eu quam sagittis, in varius erat tempor.</p> -->
+
+                </div>
+            </div>
+        </div>
+        <div class="cell shrink footer">
+            <h3>Enjoy your Book </h3>
+        </div>
+
+    </div>
+    <!-- <script>
+        $(document).ready(function() {
+           $(document).foundation();
+        })
+     </script> -->
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="./assets/script.js"></script>
+
+
+</body>
+
+</html>π
