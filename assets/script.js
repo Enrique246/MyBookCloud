@@ -1,8 +1,8 @@
 $(document).ready(function () {
    $('#submit-btn2').click(function (resultObj) {
-       event.preventDefault(); 
-       var NYBooksAPIKey = '5DWunwN9QOM7uw5MKvFLET8jlI6cayHP';
-   var author = $('#exampleFormControlInput2').val().trim().split(" ").join("+");
+      event.preventDefault(); 
+      var NYBooksAPIKey = '5DWunwN9QOM7uw5MKvFLET8jlI6cayHP';
+      var author = $('#exampleFormControlInput2').val().trim().split(" ").join("+");
          //var history = document.querySelector('#format-input2').value;
        //var URL = `https://api.nytimes.com/svc/books/v3/lists/best-sellers?q=${history}.json?ran&api-key=${NYBooksAPIKey}`;
        var URL = `https://api.nytimes.com/svc/books/v3/lists/best-sellers/history/author.json.json?author=${author}&api-key=${NYBooksAPIKey}`   
@@ -122,3 +122,4 @@ $(document).ready(function () {
    
    $('#like').click(function (event) {
       event.preventDefault();
+   });
