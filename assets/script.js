@@ -1,3 +1,73 @@
+// Print Results
+$(document).ready(function () {
+$('#submit-btn2').click(function (resultObj) {
+    event.preventDefault(); 
+    var NYBooksAPIKey = '5DWunwN9QOM7uw5MKvFLET8jlI6cayHP';
+var author = $('#exampleFormControlInput2').val().trim().split(" ").join("+");
+      //var history = document.querySelector('#format-input2').value;
+    //var URL = `https://api.nytimes.com/svc/books/v3/lists/best-sellers?q=${history}.json?ran&api-key=${NYBooksAPIKey}`;
+    var URL = `https://api.nytimes.com/svc/books/v3/lists/best-sellers/history/author.json.json?author=${author}&api-key=${NYBooksAPIKey}`   
+    
+    console.log(author)
+    //resultContentEl.text ("");
+   
+       //`https://www.googleapis.com/books/v1/volumes?q=inauthor:${authorByGoogle}&orderBy=${orderBy}&key=${GoogleAPIKey}`;
+    
+//https://api.nytimes.com/svc/books/v3/reviews.json?author=Stephen+King&api-key=5DWunwN9QOM7uw5MKvFLET8jlI6cayHP
+
+
+
+      //console.log(sResultBy);
+        console.log(resultObj);
+
+    // Alert if search is done with no input
+       if (!author) {
+        alert('You need a search input value!');
+         return;
+     }
+
+     fetch(URL)
+        .then(function (response) {
+           return response.json();
+        })
+        .then(function (response) {
+            $('#results-container').empty();
+        for (var i = 0; i < response.results.length; i++) {
+            var titleEl = response.results[i].title;
+            var NYauthor = response.results[i].author;
+            var NYdes = response.results[i].description;
+            var NYpublisher = response.results[i].publisher;
+        
+             var resultCard = $("<div>");
+             resultCard.addClass ("card, background-success, color-dark")
+
+            var titleElement = $("<h1 class='label primary'>").html(titleEl + "<br/>")
+           
+
+            var bodyContentEl = $('<p>').html (
+                '<strong>Author:</strong> ' + NYauthor + '<br/>'+
+                '<strong>Description:</strong> ' + NYdes + '<br/>'+
+              '<strong>Publisher:</strong> ' + NYpublisher + '<br/>'
+              );
+           
+            console.log(NYauthor);
+            console.log (NYdes);
+            //console.log (NYranks);
+
+            //var NYResultTitle = $("</h3>").html(
+            //    "Title: " + NYtitle + "<br>"
+            //  );
+            $('#results-container').append(titleElement,bodyContentEl);
+
+            // console.log(NYResultTitle)
+            
+        }
+        });
+    
+    });
+});
+        
+  
 $(document).ready(function () {
 
    // Submit function to search
@@ -22,14 +92,6 @@ $(document).ready(function () {
          .then(function (response) {
             return response.json();
          })
-         // .then(function (data) {
-         //    console.log(data);
-         // });
-
-         // $.ajax({
-         //    url: URL,
-         //    method: "GET"
-         // })
          .then(function (response) {
             $('#results-container').empty();
             for (var i = 0; i < response.items.length; i++) {
