@@ -1,58 +1,73 @@
 # Project 1
 
 ## My Book Cloud
+
+### MBC introduction
+Stop believing you hate to read! Reading a book is not boring!
+
+How to find a good book?
+
+MyBookCloud is the free online book search webpage everyone needs. 
+* You can browse books by your preferred author
+* Order either by newest, relevance or best seller.
+
+Use this free online book finder tool to create your own customized list of selected searched authors.
+
 ### Description
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
-- What was your motivation?
-  - Learning how to get a complete app up and running.
-- Why did you build this project?  
-  - To build a project that is the vivid example of a real work request I would get in a real job.
-- What problem does it solve?
-```md
+
+This project allowed us to consolidate and apply the topics covered through this first 8 weeks (from HTML, CSS, JS through APIs). 
+In our project we choose to use Google Books APIs and New Tork Times API. 
+Our primary aim was to integrate both APIs to be able to do a search with a complete functional app.  
+We took the challenge to build a project that is the vivid example of a real work request I would get in a real job.
+This webpage is primarly focus to do a search by the favorite or requested authors anyone needs in a particular circunstance.
+
+With the previous consideration:
 GIVEN a book finder with form inputs
 WHEN I search for an author in Google Book.
-THEN I am presented with current and future conditions for that city and that city is added to the search history
-WHEN I view current weather conditions for that city
-THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index
-WHEN I view the UV index
-THEN I am presented with a color that indicates whether the conditions are favorable, moderate, or severe
-WHEN I view future weather conditions for that city
-THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, the wind speed, and the humidity
-WHEN I click on a city in the search history
-THEN I am again presented with current and future conditions for that city
+THEN I am presented with the posibility to order by relevance (default) or newest.
+WHEN I type the author and select my prefered order, and send my request by a click.
+THEN I am presented with the top 10 (newest or relevant) books of the selected author. The displayed information include title, image of book cover, author, category and date.
+WHEN I like the author searched and results, and I click the like icon
+THEN I save the search term for future display
+WHEN I like the search experience and I click the heart icon
+THEN my click will be counted 
+WHEN I want to search by best sellers' author I use the New York Times input and after clicking "Go"
+THEN I am again presented with best sellers of author selected.
 ```
 - What did you learn?
-  - Fetch in JavaScript
-  - Proper usage and structure of ".appendChild"
-  - Usage of classList in JavaScript combined with Bootstrap
-  - Button usage
+  - Fetch in JavaScript with third-party APIs
+  - Usage of classList in JavaScript combined with Foundaton
+  - Use of buttons
+  - Display of information associated with buttons
   - Displaying and removing information depending on the users input
-  - Displaying cards with different information
+  - Use of local storage
   
 ### Lenguages Required:
 - HTML
 - CSS
 - JavaScript
-- Bootstrap
-- Moment
+- Foundation
+- Third-party APIS: Google Book API and New York Time APIs
 
 ## Usage
 
 ![The weather app includes a search option, a list of cities, and a five-day forecast and current weather conditions for Atlanta.](./assets/06-server-side-apis-homework-demo.png)
 
 ## Resources
-- https://momentjs.com/docs/
 - https://developer.mozilla.org/es/docs/Web/API/Fetch_API/Using_Fetch
-- http://jsfiddle.net/Wkfq5/
+- https://www.javatpoint.com/javascript-localstorage
+
 
 ## Credits
 - Enrique Del Castillo Chávez
+- Nicolas Avena
+- Sandra Ileana Pérez Álvarez
 
 ## Tests
-- Search button working
-- Current weather displaying correctly
-- 5-day forecast box working
+- Search Google Book and New York Times button working.
+- Current book search displaying correctly.
+- Button counting if user like experience.
+
 - Recent search history displaying correctly.
 
 [Link to homework website](https://enrique246.github.io/project1/ "My Book Cloud")
-

@@ -118,24 +118,49 @@ $(document).ready(function () {
                $('#results-container').append(GBResultTitle, GBbookImg, GBResults);
                // // // // document.cookie = 'cross-site-cookie=bar; SameSite=Lax';
             };
-         });
+         });         
          $('#like').remove();
          var GBlike = $("<button id='like' class='button' data-role='button' data-inline='true' data-mini='true' data-theme='b'><i class='far fa-thumbs-up'></i></button>").trigger('create');
          $('#btn-like').append(GBlike);
+
+         $('#love').remove();
+         var GBlove = $("<button id='love' class='button' onclick='clickCounting()' type='button' data-role='button' data-inline='true' data-mini='true' data-theme='b'><i class='far fa-heart'></i> <span id='NumberLoves' class='badge secondary'> <strong>  </strong> </span> <span class='sr-only'> number of likes </span>  </button>").trigger('create');
+         $('#btn-love').append(GBlove);
+         $('#NumberLoves').html("I like search experience: <strong>" + localStorage.clickcount + "</strong>");
    })
 });
 
+$('#like').click(function () {                
+   var inputValue1 = $("#exampleFormControlInput1").val();    
+   var currentSavedSearches = localStorage.getItem ("SavedSearches");          
+   localStorage.setItem ("SavedSearches", currentSavedSearches + "," + inputValue1);                                  
+     });
+   console.log(SavedSearches);
 
-$('#like').click(function (event) {
-   event.preventDefault();
+function clickCounting(){
+   if(typeof(Storage) !== "undefined"){
+      if (localStorage.clickcount){
+         localStorage.clickcount = Number(localStorage.clickcount)+1;
+      } else {
+         localStorage.clickcount = 1;
+      }
+      $('#NumberLoves').html("I like search experience: <strong>" + localStorage.clickcount + "</strong>");
+   } else {
+      $('#NumberLoves').html("null");
+   }
+}
 
-   let pSearch = function(pSearch) {
-      pastSeEl.attr("data-book", pSearch);
-      pSearchEl.attr("type", "submit");
-      pSearchEl.prepend(pastSeEl);
-    }
 
-    console.log(pSearch);
+// $('#like').click(function (event) {
+//    event.preventDefault();
+
+//    let pSearch = function(pSearch) {
+//       pastSeEl.attr("data-book", pSearch);
+//       pSearchEl.attr("type", "submit");
+//       pSearchEl.prepend(pastSeEl);
+//     }
+
+//     console.log(pSearch);
 
    //  let pSearchHand = function (e) {
    //    let town = e.target.attr("exampleFormControlInput1");
@@ -161,6 +186,3 @@ $('#like').click(function (event) {
    //      go5Day (town);
    //    }
    //  }
-
-
-});
