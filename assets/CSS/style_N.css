@@ -1,3 +1,7 @@
+* {
+  font-family: 'Goudy Bookletter 1911', serif;
+}
+
 body {
   padding: 0px;
   margin: 0px;
@@ -30,6 +34,9 @@ h1, h3 {
 #vertical-bgd-left{
   background-color: rgb(67, 187, 235);
 }
+#resultSubHead{
+  background-color: rgb(124, 174, 197);
+}
 
 /* Form input size */
 .form-control{
@@ -39,3 +46,6 @@ h1, h3 {
 .button{
   border-radius: 4px;
 }
+
+/* TO DO: Results Container */
+/* 1-image size, 2- alignment, 3-Font size 4- Font Decoration, 5- margins and Padding */

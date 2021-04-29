@@ -5,8 +5,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Book Cloud - find the best sellers in this place</title>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400&family=Merriweather:wght@700&display=swap"
-        rel="stylesheet" />
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400&family=Merriweather:wght@700&display=swap"
+        rel="stylesheet" /> -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&display=swap" rel="stylesheet">
 
     <!-- AJAX
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
@@ -27,7 +29,7 @@
             <!-- medium cell block cont allows os to scroll -->
             <h1> <span id="capLetters">M</span><span id="lowCase">y</span><span id="capLetters">B</span><span
                     id="lowCase">ook</span><span id="capLetters">C</span><span id="lowCase">loud</span> <span
-                    id="capLetters"> [ MBC ]</span> </h1>
+                    id="capLetters"> [MBC]</span> </h1>
             <div class="grid-x padding-gutters">
                 <div class="cell text-center">
                     <p> MBC is a place where you can search for the best seller books by gener or by the NewYork Times
@@ -63,7 +65,7 @@
                             <option value="newest">Order by newest</option>
                         </select>
                         <p><a href="#" id="submit-btn1" class="button round margin-top-4">GO 🚀 </a><br />
-            </form>
+                    </form>
                     <!--NYT SEARCH-->
                     <form id="search-form-nyt">
                         <div class="grid-x grid-padding-x">
@@ -91,8 +93,8 @@
                     <div class="row">
                         <div class="col l6">
                             <div class="card" id="results-container">
-                                <div class="card-content black-text">
-                                    <span class="card-title">Your Results</span>
+                                <div class="card-content black-text" id="resultSubHead">
+                                    <h3><span class="card-title">Results</span></h3>
 
                                     <div>
 
