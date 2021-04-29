@@ -1,4 +1,4 @@
-//  var resultTextEl = document.querySelector('#result-text');
+ // var resultTextEl = document.querySelector('#result-text');
 //  var resultContentEl = document.querySelector('#selected-book-box');
 //  var searchFormEl = document.querySelector('#search-form-nyt');
 //  var searchTitleEl = document.querySelector('sResultBy')
@@ -142,100 +142,74 @@
    //console.log(bookSearched);
 
 // Print Results
+$(document).ready(function () {
 $('#submit-btn2').click(function (resultObj) {
     event.preventDefault(); 
     var NYBooksAPIKey = '5DWunwN9QOM7uw5MKvFLET8jlI6cayHP';
-//var genre = $('#exampleFormControlInput2').val().trim();
-      var history = document.querySelector('#format-input2').value;
-    var URL = `https://api.nytimes.com/svc/books/v3/lists/best-sellers?q=${history}.json?ran&api-key=${NYBooksAPIKey}`;
-       //resultContentEl.text "";
+var author = $('#exampleFormControlInput2').val().trim().split(" ").join("+");
+      //var history = document.querySelector('#format-input2').value;
+    //var URL = `https://api.nytimes.com/svc/books/v3/lists/best-sellers?q=${history}.json?ran&api-key=${NYBooksAPIKey}`;
+    var URL = `https://api.nytimes.com/svc/books/v3/lists/best-sellers/history/author.json.json?author=${author}&api-key=${NYBooksAPIKey}`   
+    
+    console.log(author)
+    //resultContentEl.text ("");
    
        //`https://www.googleapis.com/books/v1/volumes?q=inauthor:${authorByGoogle}&orderBy=${orderBy}&key=${GoogleAPIKey}`;
     
+//https://api.nytimes.com/svc/books/v3/reviews.json?author=Stephen+King&api-key=5DWunwN9QOM7uw5MKvFLET8jlI6cayHP
+
+
 
       //console.log(sResultBy);
         console.log(resultObj);
 
-        // Alert if search is done with no input
-      if (!genre) {
+    // Alert if search is done with no input
+       if (!author) {
         alert('You need a search input value!');
-        return;
+         return;
      }
 
      fetch(URL)
         .then(function (response) {
            return response.json();
         })
-        .then(function (data) {
-    
-            console.log(data);
+        .then(function (response) {
+            $('#results-container').empty();
+        for (var i = 0; i < response.results.length; i++) {
+            var titleEl = response.results[i].title;
+            var NYauthor = response.results[i].author;
+            var NYdes = response.results[i].description;
+            var NYpublisher = response.results[i].publisher;
+        
+             var resultCard = $("<div>");
+             resultCard.addClass ("card, background-success, color-dark")
+
+            var titleElement = $("<h1 class='label primary'>").html(titleEl + "<br/>")
+           
+
+            var bodyContentEl = $('<p>').html (
+                '<strong>Author:</strong> ' + NYauthor + '<br/>'+
+                '<strong>Description:</strong> ' + NYdes + '<br/>'+
+              '<strong>Publisher:</strong> ' + NYpublisher + '<br/>'
+              );
+           
+            console.log(NYauthor);
+            console.log (NYdes);
+            //console.log (NYranks);
+
+            //var NYResultTitle = $("</h3>").html(
+            //    "Title: " + NYtitle + "<br>"
+            //  );
+            $('#results-container').append(titleElement,bodyContentEl);
+
+            // console.log(NYResultTitle)
+            
+        }
         });
     
     });
-    //    //Book result container ('div')
-    //    var resultCard = document.createElement('div');
-    //    resultCard.classList = "card, background-success, color-dark";
-    //    var resultBody = document.createElement('div');
-    //    resultBody.classList.add('card-body');
-    //    resultCard.append(resultBody);
-     
-    //    var titleEl = document.createElement('h3');
-    //    titleEl.textContent = resultObj.title;
-     
-    //     var bodyContentEl = document.createElement('p');
-    //    bodyContentEl.innerHTML =
-    //    // resultObj.ranks_history.published_date
-    //       '<strong>Publish Date:</strong> ' + resultObj.ranks_history.publish_date + '<br/>';
-     
-    //    if (resultObj.author) {
-    //      bodyContentEl.innerHTML +=
-    //        '<strong>Author:</strong> ' + resultObj.author + '<br/>';
-    //    } else {
-    //      bodyContentEl.innerHTML +=
-    //        '<strong>Author:</strong> No subject for this entry.';
-    //    }
-     
-    //    if (resultObj.description) {
-    //      bodyContentEl.innerHTML +=
-    //        '<strong>Description:</strong> ' + resultObj.description;
-    //    } else {
-    //      bodyContentEl.innerHTML +=
-    //        '<strong>Description:</strong>  No description for this entry.';
-    //    }
-     
-    //    var linkButtonEl = $('</a>');
-    //    linkButtonEl.text ('Read More');
-    //    linkButtonEl.attr ('href', resultObj.url);
-    //    linkButtonEl.class ('button', 'button-dark');
-
-    //    var likeButtonEl = $('button');
-    //    likeButtonEl.text ('src', "/Users/enrique/Coding-Bootcamp/project1/assets/thumb-up.png") + '<br/>';
-    //    //likeButtonEl.setAttribute('href', "https://pngimg.com/uploads/like/like_PNG51.png") + '<br/>';
-    //    likeButtonEl.class ('button','hollow', 'secondary')
-    
-     
-    // });
-
-
-//  for (var i = 0; i < locRes.results.length; i++) {
-//     printResults(locRes.results[i]);
-//   }
-  
-//   function handleSearchFormSubmit(event) {
-//     event.preventDefault();
-  
-//     var searchInputVal = document.querySelector('#search-input').value;
-//     var formatInputVal = document.querySelector('#format-input').value;
-  
-//     if (!searchInputVal) {
-//       console.error('You need a search input value!');
-//       return;
-//     }
-  
-//     searchApi(searchInputVal, formatInputVal);
-//   }
-  
-//   searchFormEl.addEventListener('submit', handleSearchFormSubmit);
+});
+        
   
 $(document).ready(function () {
 
@@ -261,14 +235,6 @@ $(document).ready(function () {
          .then(function (response) {
             return response.json();
          })
-         // .then(function (data) {
-         //    console.log(data);
-         // });
-
-         // $.ajax({
-         //    url: URL,
-         //    method: "GET"
-         // })
          .then(function (response) {
             $('#results-container').empty();
             for (var i = 0; i < response.items.length; i++) {
