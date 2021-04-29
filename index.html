@@ -24,20 +24,21 @@
 <body>
     <div class="grid-y medium-grid-frame">
         <!--Setup a vertical cont-->
-        <div class="cell shrink header medium-cell-block-container" id="head-color">
+        <div class="cell shrink header medium-cell-block-container" id="head-color" style="height: 120px;">
             <!-- medium cell block cont allows os to scroll -->
+            <br />
             <h1> <span id="capLetters">M</span><span id="lowCase">y</span><span id="capLetters">B</span><span
                     id="lowCase">ook</span><span id="capLetters">C</span><span id="lowCase">loud</span> <span
                     id="capLetters"> [ MBC ]</span> </h1>
-            <div class="grid-x padding-gutters">
-                <div class="cell text-center">
+            <!-- <div class="grid-x padding-gutters">
+                <div class="cell text-center" id="head-subtext">
                     <p> MBC is a place where you can search for the best seller books by gener or by the NewYork Times
                         list</p>
                 </div>
-            </div>
+            </div> -->
         </div>
 
-        <div class="cell medium-auto medium-cell-block-container">
+        <div class="cell medium-auto medium-cell-block-container ">
             <div class="grid-x grid-padding-x">
                 <div class="cell medium-4 medium-cell-block-y" id="vertical-bgd-left">
                     <h3 id="bold-letter">Search for a Book 🔎 </h3>
@@ -63,7 +64,8 @@
                             <option value="relevance">Order by relevance</option>
                             <option value="newest">Order by newest</option>
                         </select>
-                        <p><a href="#" id="submit-btn1" class="button round margin-top-4">GO 🚀 </a>     <a id="btn-like"></a>    <a id="btn-love"></a>
+                        <p><a href="#" id="submit-btn1" class="button round margin-top-4">GO 🚀 </a> <a
+                                id="btn-like"></a> <a id="btn-love"></a>
                     </form>
                     <!--NYT SEARCH-->
                     <form id="search-form-nyt">
@@ -79,6 +81,13 @@
                             </div>
                         </div>
                     </form>
+                    <div class="" id="bookShelf">
+                        <div class="grid-x grid-padding-x">
+                            <div class="cell small-12">
+                                <h3 id="bold-letter"> Book Shelf </h3>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!--Right Cell/Column = Cards Column-->

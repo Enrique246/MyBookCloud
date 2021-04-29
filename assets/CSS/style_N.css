@@ -6,6 +6,9 @@ body {
 .header, .footer {
   background-color: #ddd;
 }
+#head-subtext{
+  color: rgb(255, 255, 247);
+}
 
 h1, h3 {
   text-align: center;
@@ -19,6 +22,7 @@ h1, h3 {
 #capLetters {
   color: rgb(43, 138, 216);
 }
+
 #lowCase{
   color: antiquewhite;
 }
