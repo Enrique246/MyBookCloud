@@ -142,7 +142,7 @@ let sSearch = function () {
    // var inputValue1 = $("#exampleFormControlInput1").val();    
    // var currentSavedSearches = localStorage.getItem ("SavedSearches");          
    // localStorage.setItem ("SavedSearches", currentSavedSearches + "," + inputValue1);
-  $('#like').click(function () {  
+  $('#btn-like').click(function () {  
    let pSearch = function(pSearch) {
       pastSeEl = $("<button>");
       pastSeEl.text (pSearch);
@@ -156,7 +156,7 @@ let sSearch = function () {
             console.log("click");
             event.preventDefault();
           
-            let book = bookTitleEl.value().trim();
+            let book = bookTitleEl.val().trim();
             console.log(book);
              if (book) {
          //  goTownWeather(town);
@@ -172,7 +172,7 @@ let sSearch = function () {
           };
         }
           
-        bookFormEl.addEventListener("click", searchHandler);
+        bookFormEl.click(searchHandler);
       });
 
 
