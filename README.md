@@ -9,8 +9,8 @@ Provide a short description explaining the what, why, and how of your project. U
   - To build a project that is the vivid example of a real work request I would get in a real job.
 - What problem does it solve?
 ```md
-GIVEN a weather dashboard with form inputs
-WHEN I search for a city
+GIVEN a book finder with form inputs
+WHEN I search for an author in Google Book.
 THEN I am presented with current and future conditions for that city and that city is added to the search history
 WHEN I view current weather conditions for that city
 THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index
@@ -28,6 +28,7 @@ THEN I am again presented with current and future conditions for that city
   - Button usage
   - Displaying and removing information depending on the users input
   - Displaying cards with different information
+  
 ### Lenguages Required:
 - HTML
 - CSS
