@@ -21,6 +21,7 @@ Our primary aim was to integrate both APIs to be able to do a search with a comp
 We took the challenge to build a project that is the vivid example of a real work request I would get in a real job.
 This webpage is primarly focus to do a search by the favorite or requested authors anyone needs in a particular circunstance.
 
+```
 With the previous consideration:
 GIVEN a book finder with form inputs
 WHEN I search for an author in Google Book.
@@ -34,6 +35,7 @@ THEN my click will be counted
 WHEN I want to search by best sellers' author I use the New York Times input and after clicking "Go"
 THEN I am again presented with best sellers of author selected.
 ```
+
 - What did you learn?
   - Fetch in JavaScript with third-party APIs
   - Usage of classList in JavaScript combined with Foundaton
@@ -51,12 +53,16 @@ THEN I am again presented with best sellers of author selected.
 
 ## Usage
 
-![The weather app includes a search option, a list of cities, and a five-day forecast and current weather conditions for Atlanta.](./assets/06-server-side-apis-homework-demo.png)
+![My Book Cloud app includes a search option of books by author, ordered by newest, relevance and bestsellers.]
 
 ## Resources
 - https://developer.mozilla.org/es/docs/Web/API/Fetch_API/Using_Fetch
 - https://www.javatpoint.com/javascript-localstorage
-
+- https://stackoverflow.com/questions/16044031/list-of-buttons-and-javascript
+- https://www.w3schools.com/howto/howto_js_close_list_items.asp
+- https://api.jquery.com/event.stopImmediatePropagation/
+- https://getbootstrap.com/
+- https://get.foundation/index.html
 
 ## Credits
 - Enrique Del Castillo Chávez
@@ -66,8 +72,7 @@ THEN I am again presented with best sellers of author selected.
 ## Tests
 - Search Google Book and New York Times button working.
 - Current book search displaying correctly.
-- Button counting if user like experience.
+- Button counting if user likes experience.
 
-- Recent search history displaying correctly.
 
 [Link to homework website](https://enrique246.github.io/project1/ "My Book Cloud")
