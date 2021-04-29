@@ -41,10 +41,8 @@ THEN I am again presented with current and future conditions for that city
 
 ## Resources
 - https://momentjs.com/docs/
-- https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
-- https://getbootstrap.com/docs/5.0/components/list-group/
-- https://openweathermap.org/weather-data
-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift
+- https://developer.mozilla.org/es/docs/Web/API/Fetch_API/Using_Fetch
+- http://jsfiddle.net/Wkfq5/
 
 ## Credits
 - Enrique Del Castillo Chávez
@@ -56,3 +54,4 @@ THEN I am again presented with current and future conditions for that city
 - Recent search history displaying correctly.
 
 [Link to homework website](https://enrique246.github.io/project1/ "My Book Cloud")
+

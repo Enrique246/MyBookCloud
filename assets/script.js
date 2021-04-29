@@ -1,146 +1,3 @@
- // var resultTextEl = document.querySelector('#result-text');
-//  var resultContentEl = document.querySelector('#selected-book-box');
-//  var searchFormEl = document.querySelector('#search-form-nyt');
-//  var searchTitleEl = document.querySelector('sResultBy')
-
-
-// let gfetch = 'https://www.googleapis.com/books/v1/volumes?q=search+terms'
-// {
-// fetch('https://www.googleapis.com/books/v1/volumes?q=search+terms')
-
-//  .then(response => response.json())
-//  .then(data => console.log(data));
-
-// };
-
-//  console.log (gfetch);
-
-//  var URL = 'https://www.googleapis.com/books/v1/volumes?q=tuna'
-// fetch(URL)
-//    .then(function (response) {
-//        return response.json();
-//    })
-//    .then(function (data) {
-//        console.log(data);
-//    });
-
-      
-         
-//      }
-
-//  searchApi();
-
-//  function printResults(resultObj) {
-//     console.log(resultObj);
-  
-//     // set up `<div>` to hold result content
-//     var resultCard = document.createElement('div');
-//     resultCard.classList.add('card', 'bg-light', 'text-dark', 'mb-3', 'p-3');
-
-//  }
-
-
-
-// Functional fetch for Google API  (YA FUNCIONA)
-
-// var GoogleAPIKey = 'AIzaSyBjBtdqp8hFmjH8MUjGWcgMXITnOJ0pZkU';
-
-// var URL = `https://www.googleapis.com/books/v1/volumes?q=search+terms&key=${GoogleAPIKey}`;
-// fetch(URL)
-//    .then(function (response) {
-//        return response.json();
-//    })
-//    .then(function (data) {
-//        console.log(data);
-//    });
-
-
-
-// Google API: subject  (YA FUNCIONA)
-
-// var GoogleAPIKey = 'AIzaSyBjBtdqp8hFmjH8MUjGWcgMXITnOJ0pZkU';
-
-// var URL = `https://www.googleapis.com/books/v1/volumes?q=subject:${}&key=${GoogleAPIKey}`;
-// fetch(URL)
-//    .then(function (response) {
-//        return response.json();
-//    })
-//    .then(function (data) {
-//        console.log(data);
-//    });
-
-
-
-// Google API: author / newest  (YA FUNCIONA)
-
-// var GoogleAPIKey = 'AIzaSyBjBtdqp8hFmjH8MUjGWcgMXITnOJ0pZkU';
-
-// var URL = `https://www.googleapis.com/books/v1/volumes?q=subtitle:fiction&inauthor:keyes&orderBy=newest&key=${GoogleAPIKey}`;
-// // var URL = `https://www.googleapis.com/books/v1/volumes?q=subtitle:${}&inauthor:${}&orderBy=${}&key=${GoogleAPIKey}`;
-// fetch(URL)
-//    .then(function (response) {
-//        return response.json();
-//    })
-//    .then(function (data) {
-//        console.log(data);
-//    });
-
-
-
-// NY Times Books API  (YA FUNCIONA)
-
-// var NYBooksAPIKey = '5DWunwN9QOM7uw5MKvFLET8jlI6cayHP';
-// var URL = `https://api.nytimes.com/svc/books/v3/lists.json?list=tacos&api-key=${NYBooksAPIKey}`;
-// fetch(URL)
-//    .then(function (response) {
-//        return response.json();
-//    })
-//    .then(function (data) {
-//        console.log(data);
-//    });
-
-
-// NY Times Books API: by best sellers (YA FUNCIONA)
-// function searchApi () {
-// var NYBooksAPIKey = '5DWunwN9QOM7uw5MKvFLET8jlI6cayHP';
-// var URL = `https://api.nytimes.com/svc/books/v3/lists/best-sellers/history.json?=ran&api-key=${NYBooksAPIKey}`;
-// fetch(URL)
-//    .then(function (response) {
-//        return response.json();
-//    })
-//    .then(function (locRes) {
-
-//        console.log(locRes);
-
-//        if (!locRes.results.length){
-//            console.log('No results found!');
-//            resultContentEl.innerHTML='<h3>No results found, search again!</h3>'
-//        }
-//      else {
-//         resultContentEl.textContent = '';
-//         for (var i = 0; i < locRes.results.length; i++) {
-//           printResults(locRes.results[i]);
-//           console.log(locRes);
-//           //console.log(results)
-//           console.log("Results go here", locRes.results[i]);
-//         }
-//       }
-//     })
-//    };
-
-   //Display of input in search space
-// function displayTitle(){
-//    var bookSearched = document.getElementById("search-form-nyt").value;
-//    var sResultBy = document.getElementById("sResultBy");
-//    sResultBy.innerHTML = bookSearched;
-//    console.log(sResultBy);   
-// };
-// displayTitle();
- //    var bookSearched = document.getElementById("search-form-nyt").value;
-    //    var sResultBy = document.getElementById("sResultBy");
-    //    sResultBy.innerHTML = bookSearched;
-   //console.log(bookSearched);
-
 // Print Results
 $(document).ready(function () {
 $('#submit-btn2').click(function (resultObj) {
@@ -240,20 +97,30 @@ $(document).ready(function () {
             for (var i = 0; i < response.items.length; i++) {
                var GBtitle = response.items[i].volumeInfo.title;
                var GBauthor = response.items[i].volumeInfo.authors;
+               var GBcategories = response.items[i].volumeInfo.categories;
                var GBdate = response.items[i].volumeInfo.publishedDate;
+               // var GBlink = response.items[i].volumeInfo.previewLink;
                var GBimage = response.items[i].volumeInfo.imageLinks.smallThumbnail
-               var GBbookImg = $("<img>").attr("src", GBimage).addClass("Search Image")
-               var GBResultTitle = $("<h1 class='label primary'>").html(
+               var GBbookImg = $("<img width='120' text-align: 'center'>").attr("src", GBimage).addClass("Search Image")
+               var GBResultTitle = $("<h1 class='label success' style='font-weight: bold; font-size: 30px'>").html(
                   "Title: " + GBtitle + "<br>"
                );
                var GBResults = $("<h6>").html(
                   "Author: " + GBauthor + "<br>" +
-                  "Date: " + GBdate + "<br> <hr hr-border 2px solid $black>"
+                  "Category: " + GBcategories + "<br>" +
+                  "Date: " + GBdate + "<br>"
+                  // "Link to Google Books site: " + "<p href='GBlink'></p>" + "<br> <hr hr-border 2px solid $black>"
                );
+               var GBlike = $("<div id='like' class='button' data-role='button' data-inline='true' data-mini='true' data-theme='b'><i class='far fa-thumbs-up'></i></button>").trigger('create');
                console.log(GBResults);
-               $('#results-container').append(GBResultTitle, GBbookImg, GBResults);
+               $('#result-text').html(authorByGoogle);
+               $('#results-container').append(GBResultTitle, GBbookImg, GBResults, GBlike);
                // // // // document.cookie = 'cross-site-cookie=bar; SameSite=Lax';
             };
          });
    })
 });
+
+$('#like').click(function (event) {
+   event.preventDefault();
+})
