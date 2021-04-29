@@ -145,6 +145,7 @@ let sSearch = function () {
   $('#btn-like').click(function () {  
    let pSearch = function(pSearch) {
       pastSeEl = $("<button>");
+      pastSeEl.addClass("button secondary")
       pastSeEl.text (pSearch);
         pastSeEl.attr("data-book", pSearch);
         pSearchEl.attr("type", "submit");
