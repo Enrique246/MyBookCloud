@@ -129,12 +129,28 @@ $(document).ready(function () {
          $('#NumberLoves').html("I like search experience: <strong>" + localStorage.clickcount + "</strong>");
    })
 });
- 
+
+let bookTitleEl = $("#exampleFormControlInput1"); 
 let savedBooks = [];
-let sSearch = function () {
-   localStorage.setItem("savedBooks", JSON.stringify(savedBooks));
- };
- let bookTitleEl = $("#exampleFormControlInput1");
+// let sSearch = function () {
+//  var array = JSON.parse(window.localStorage.getItem("savedBooks")) || [];//the "|| []" replaces possible null from localStorage with empty array
+// var value = "some value";
+// if(array.indexOf(value) == -1){
+//     array.push(value);
+//     window.localStorage.setItem("savedBooks", JSON.stringify(array));
+// }
+
+   //localStorage.setItem("savedBooks", JSON.stringify(savedBooks));
+//    let localStorageCheck = JSON.parse(window.localStorage.getItem("savedBooks")) || [];
+   
+//    if (localStorageCheck.indexOf(bookTitleEl)== -1) {
+//       localStorageCheck.push(savedBooks);
+//      window.localStorage.setItem("savedBooks", JSON.stringify(localStorageCheck));
+// }
+//console.log(localStorageCheck)
+   //};
+
+ 
  let bookFormEl = $("#search-form-G");
  let pSearchEl = $("#p-search-b");
 
@@ -145,7 +161,7 @@ let sSearch = function () {
   $('#btn-like').click(function () {  
    let pSearch = function(pSearch) {
       pastSeEl = $("<button>");
-      pastSeEl.addClass("button secondary")
+      pastSeEl.addClass("button secondary");
       pastSeEl.text (pSearch);
         pastSeEl.attr("data-book", pSearch);
         pSearchEl.attr("type", "submit");
@@ -157,18 +173,18 @@ let sSearch = function () {
             console.log("click");
             event.preventDefault();
           
-            let book = bookTitleEl.val().trim();
-            console.log(book);
+           let book = bookTitleEl.val().trim();
+            //console.log(book);
              if (book) {
          //  goTownWeather(town);
          //   go5Day(town);
-              savedBooks.unshift({book});
+              //savedBooks.unshift({book});
          //       //The unshift() method 
          //       //Adds one or more elements to the beginning of an array and returns the new length of the array.
          //       //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift
          //       townTitleEl.value = "";
              
-             sSearch();
+             //sSearch(); 
              pSearch(book);
           };
         }
