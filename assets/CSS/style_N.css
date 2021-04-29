@@ -43,6 +43,13 @@ h1, h3 {
 .button{
   border-radius: 4px;
 }
+.button:hover {
+  background-color: rgb(214, 255, 30);
+}
+.btn-grl:hover {
+ background-color: darksalmon;
+}
+
 /* CARDS */
 /* .card {
   margin: 0 0 20px 0;

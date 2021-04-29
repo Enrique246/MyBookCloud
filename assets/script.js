@@ -40,7 +40,7 @@ $(document).ready(function () {
                var resultCard = $("<div>");
                resultCard.addClass("card, background-success, color-dark")
 
-               var titleElement = $("<h1 class='label primary'>").html(titleEl + "<br/>")
+               var titleElement = $("<h1 class='label primary' style='font-weight: bold; font-size: 30px'; 'text-align: center'>").html(titleEl + "<br/>")
 
 
                var bodyContentEl = $('<p>').html(
@@ -104,7 +104,7 @@ $(document).ready(function () {
                // var GBlink = response.items[i].volumeInfo.previewLink;
                var GBimage = response.items[i].volumeInfo.imageLinks.smallThumbnail
                var GBbookImg = $("<img width='150' text-align: 'center'>").attr("src", GBimage).addClass("Search Image")
-               var GBResultTitle = $("<h1 class='label success' style='font-weight: bold; font-size: 30px'; 'text-align: center'>").html(
+               var GBResultTitle = $("<h1 class='label primary' style='font-weight: bold; font-size: 30px'; 'text-align: center'>").html(
                   "Title: " + GBtitle + "<br>"
                );
                var GBResults = $("<h6 style='text-align: left'>").html(
@@ -129,13 +129,57 @@ $(document).ready(function () {
          $('#NumberLoves').html("I like search experience: <strong>" + localStorage.clickcount + "</strong>");
    })
 });
+ 
+let savedBooks = [];
+let sSearch = function () {
+   localStorage.setItem("savedBooks", JSON.stringify(savedBooks));
+ };
+ let bookTitleEl = $("#exampleFormControlInput1");
+ let bookFormEl = $("#search-form-G");
+ let pSearchEl = $("#p-search-b");
 
-$('#like').click(function () {                
-   var inputValue1 = $("#exampleFormControlInput1").val();    
-   var currentSavedSearches = localStorage.getItem ("SavedSearches");          
-   localStorage.setItem ("SavedSearches", currentSavedSearches + "," + inputValue1);                                  
-     });
-   console.log(SavedSearches);
+             console.log(bookTitleEl);
+   // var inputValue1 = $("#exampleFormControlInput1").val();    
+   // var currentSavedSearches = localStorage.getItem ("SavedSearches");          
+   // localStorage.setItem ("SavedSearches", currentSavedSearches + "," + inputValue1);
+  $('#btn-like').click(function () {  
+   let pSearch = function(pSearch) {
+      pastSeEl = $("<button>");
+      pastSeEl.text (pSearch);
+        pastSeEl.attr("data-book", pSearch);
+        pSearchEl.attr("type", "submit");
+        pSearchEl.prepend(pastSeEl);
+          }
+   console.log(pSearch);
+           
+          let searchHandler = function (event) {
+            console.log("click");
+            event.preventDefault();
+          
+            let book = bookTitleEl.val().trim();
+            console.log(book);
+             if (book) {
+         //  goTownWeather(town);
+         //   go5Day(town);
+              savedBooks.unshift({book});
+         //       //The unshift() method 
+         //       //Adds one or more elements to the beginning of an array and returns the new length of the array.
+         //       //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift
+         //       townTitleEl.value = "";
+             
+             sSearch();
+             pSearch(book);
+          };
+        }
+          
+        bookFormEl.click(searchHandler);
+      });
+
+
+
+
+
+
 
 function clickCounting(){
    if(typeof(Storage) !== "undefined"){
