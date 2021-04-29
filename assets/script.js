@@ -35,20 +35,30 @@ $(document).ready(function () {
             for (var i = 0; i < response.items.length; i++) {
                var GBtitle = response.items[i].volumeInfo.title;
                var GBauthor = response.items[i].volumeInfo.authors;
+               var GBcategories = response.items[i].volumeInfo.categories;
                var GBdate = response.items[i].volumeInfo.publishedDate;
+               // var GBlink = response.items[i].volumeInfo.previewLink;
                var GBimage = response.items[i].volumeInfo.imageLinks.smallThumbnail
-               var GBbookImg = $("<img>").attr("src", GBimage).addClass("Search Image")
-               var GBResultTitle = $("<h1 class='label primary'>").html(
+               var GBbookImg = $("<img width='120' text-align: 'center'>").attr("src", GBimage).addClass("Search Image")
+               var GBResultTitle = $("<h1 class='label success' style='font-weight: bold; font-size: 30px'>").html(
                   "Title: " + GBtitle + "<br>"
                );
                var GBResults = $("<h6>").html(
                   "Author: " + GBauthor + "<br>" +
-                  "Date: " + GBdate + "<br> <hr hr-border 2px solid $black>"
+                  "Category: " + GBcategories + "<br>" +
+                  "Date: " + GBdate + "<br>"
+                  // "Link to Google Books site: " + "<p href='GBlink'></p>" + "<br> <hr hr-border 2px solid $black>"
                );
+               var GBlike = $("<div id='like' class='button' data-role='button' data-inline='true' data-mini='true' data-theme='b'><i class='far fa-thumbs-up'></i></button>").trigger('create');
                console.log(GBResults);
-               $('#results-container').append(GBResultTitle, GBbookImg, GBResults);
+               $('#result-text').html(authorByGoogle);
+               $('#results-container').append(GBResultTitle, GBbookImg, GBResults, GBlike);
                // // // // document.cookie = 'cross-site-cookie=bar; SameSite=Lax';
             };
          });
    })
 });
+
+$('#like').click(function (event) {
+   event.preventDefault();
+})
