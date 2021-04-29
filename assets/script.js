@@ -1,4 +1,3 @@
-// Print Results
 $(document).ready(function () {
    $('#submit-btn2').click(function (resultObj) {
        event.preventDefault(); 
@@ -123,5 +122,3 @@ $(document).ready(function () {
    
    $('#like').click(function (event) {
       event.preventDefault();
-   })
-   
