@@ -124,7 +124,7 @@ $(document).ready(function () {
       $('#btn-like').append(GBlike);
 
       $('#love').remove();
-      var GBlove = $("<button id='love' class='button' onclick='clickCounting()' type='button' data-role='button' data-inline='true' data-mini='true' data-theme='b'><i class='far fa-heart'></i> <span id='NumberLoves' class='badge secondary'> <strong>  </strong> </span> <span class='sr-only'> number of likes </span>  </button>").trigger('create');
+      var GBlove = $("<button id='love' class='button' onclick='clickCounting()' type='button' data-role='button' data-inline='true' data-mini='true' data-theme='b'><i class='far fa-heart'></i> <span id='NumberLoves'> <strong>  </strong> </span> <span class='sr-only'> number of likes </span>  </button>").trigger('create');
       $('#btn-love').append(GBlove);
       $('#NumberLoves').html("<strong> GIVE US LOVE: " + localStorage.clickcount + "</strong>");
    })

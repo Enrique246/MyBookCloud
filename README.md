@@ -53,7 +53,7 @@ THEN I am again presented with best sellers of author selected.
 
 ## Usage
 
-![My Book Cloud app includes a search option of books by author, ordered by newest, relevance and bestsellers.]
+My Book Cloud app includes 2 search options for Google Books and NY Times best sellers. A list of books, like button, a give love button that counts all the people that click in it. As well as a "Book Shelf", where the name of the book you are searching for will appear for further user comfort.
 
 ## Resources
 - https://developer.mozilla.org/es/docs/Web/API/Fetch_API/Using_Fetch
@@ -72,7 +72,9 @@ THEN I am again presented with best sellers of author selected.
 ## Tests
 - Search Google Book and New York Times button working.
 - Current book search displaying correctly.
-- Button counting if user likes experience.
-
+- Button counting if user like experience.
+- Recent search history displaying correctly.
+- Like button displays the name of the search when double clicked.
+- Alert message working when no input has been submited.
 
 [Link to homework website](https://enrique246.github.io/project1/ "My Book Cloud")
