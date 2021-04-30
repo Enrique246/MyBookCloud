@@ -52,12 +52,16 @@ THEN I am again presented with best sellers of author selected.
 
 ## Usage
 
-![My Book Cloud app includes a search option, a list of books, like button.](./assets/06-server-side-apis-homework-demo.png)
+My Book Cloud app includes 2 search options for Google Books and NY Times best sellers. A list of books, like button, a give love button that counts all the people that click in it. As well as a "Book Shelf", where the name of the book you are searching for will appear for further user comfort.
 
 ## Resources
 - https://developer.mozilla.org/es/docs/Web/API/Fetch_API/Using_Fetch
 - https://www.javatpoint.com/javascript-localstorage
-
+- https://stackoverflow.com/questions/16044031/list-of-buttons-and-javascript
+- https://www.w3schools.com/howto/howto_js_close_list_items.asp
+- https://api.jquery.com/event.stopImmediatePropagation/
+- https://getbootstrap.com/
+- https://get.foundation/index.html
 
 ## Credits
 - Enrique Del Castillo Chávez
@@ -69,5 +73,6 @@ THEN I am again presented with best sellers of author selected.
 - Current book search displaying correctly.
 - Button counting if user like experience.
 - Recent search history displaying correctly.
+- Like button displays the name of the search when double clicked.
 
 [Link to homework website](https://enrique246.github.io/project1/ "My Book Cloud")
