@@ -124,14 +124,13 @@ $(document).ready(function () {
          $('#btn-like').append(GBlike);
 
          $('#love').remove();
-         var GBlove = $("<button id='love' class='button' onclick='clickCounting()' type='button' data-role='button' data-inline='true' data-mini='true' data-theme='b'><i class='far fa-heart'></i> <span id='NumberLoves' class='badge secondary'> <strong>  </strong> </span> <span class='sr-only'> number of likes </span>  </button>").trigger('create');
+         var GBlove = $("<button id='love' class='button' onclick='clickCounting()' type='button' data-role='button' data-inline='true' data-mini='true' data-theme='b'><i class='far fa-heart'></i> <span id='NumberLoves'> <strong>  </strong> </span> <span class='sr-only'> number of likes </span>  </button>").trigger('create');
          $('#btn-love').append(GBlove);
-         $('#NumberLoves').html("I like search experience: <strong>" + localStorage.clickcount + "</strong>");
+         $('#NumberLoves').html("Give Us Love <strong>" + localStorage.clickcount + "</strong>");
    })
 });
 
-let bookTitleEl = $("#exampleFormControlInput1"); 
-let savedBooks = [];
+
 // let sSearch = function () {
 //  var array = JSON.parse(window.localStorage.getItem("savedBooks")) || [];//the "|| []" replaces possible null from localStorage with empty array
 // var value = "some value";
@@ -150,7 +149,9 @@ let savedBooks = [];
 //console.log(localStorageCheck)
    //};
 
- 
+ let bookTitleEl = $("#exampleFormControlInput1"); 
+let savedBooks = [];
+let like = $('#btn-like')
  let bookFormEl = $("#search-form-G");
  let pSearchEl = $("#p-search-b");
 
@@ -187,9 +188,11 @@ let savedBooks = [];
              //sSearch(); 
              pSearch(book);
           };
+          
         }
           
-        bookFormEl.click(searchHandler);
+          like.click(searchHandler);
+        
       });
 
 
@@ -205,7 +208,7 @@ function clickCounting(){
       } else {
          localStorage.clickcount = 1;
       }
-      $('#NumberLoves').html("I like search experience: <strong>" + localStorage.clickcount + "</strong>");
+      $('#NumberLoves').html("Give Us Love: <strong>" + localStorage.clickcount + "</strong>");
    } else {
       $('#NumberLoves').html("null");
    }

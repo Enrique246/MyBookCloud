@@ -18,29 +18,38 @@
     <!-- Font awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+
+    <!--Font Julius Sans One-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap" rel="stylesheet">
+
+    <!-- Icon for tab -->
+    <link rel="icon" href="./assets/MBC.jpg" type="image/icon type">
+    
 </head>
 
 
 <body>
     <div class="grid-y medium-grid-frame">
         <!--Setup a vertical cont-->
-        <div class="cell shrink header medium-cell-block-container" id="head-color">
+        <div class="cell shrink header medium-cell-block-container" id="head-color" style="height: 120px;">
             <!-- medium cell block cont allows os to scroll -->
+            <br />
             <h1> <span id="capLetters">M</span><span id="lowCase">y</span><span id="capLetters">B</span><span
                     id="lowCase">ook</span><span id="capLetters">C</span><span id="lowCase">loud</span> <span
-                    id="capLetters"> [ MBC ]</span> </h1>
-            <div class="grid-x padding-gutters">
-                <div class="cell text-center">
+                    id="capLetters"> [MBC]</span> </h1>
+            <!-- <div class="grid-x padding-gutters">
+                <div class="cell text-center" id="head-subtext">
                     <p> MBC is a place where you can search for the best seller books by gener or by the NewYork Times
                         list</p>
                 </div>
-            </div>
+            </div> -->
         </div>
 
-        <div class="cell medium-auto medium-cell-block-container">
+        <div class="cell medium-auto medium-cell-block-container ">
             <div class="grid-x grid-padding-x">
                 <div class="cell medium-4 medium-cell-block-y" id="vertical-bgd-left">
-                    <h3 id="bold-letter">Search for a Book 🔎 </h3>
+                    <h3 class="lowerC" id="bold-letter">Search for a Book 🔎 </h3>
                     <!--search normal, bien espaciado-->
                     <!-- <div class="input-group input-group-rounded">
                         <input class="input-group-field" type="search">
@@ -50,11 +59,11 @@
                     </div> -->
 
                     <!-- intentional space for control-->
-                    <!--GOOGLE SEARCH-->
+                    <!--GOOGLE SEARCH-->   
                     <form action="#" method="get" id="search-form-G">
                         <div class="grid-x grid-padding-x">
                             <div class="form-group cell small-12">
-                                <label for="exampleFormControlInput1">Search for Author</label>
+                                <label class="lowerBig" for="exampleFormControlInput1">Search for Author</label>
                                 <input type="search-input-G" class="form-control" id="exampleFormControlInput1"
                                     placeholder="Results by Google">
                             </div>
@@ -63,25 +72,36 @@
                             <option value="relevance">Order by relevance</option>
                             <option value="newest">Order by newest</option>
                         </select>
-                        <p><a href="#" id="submit-btn1" class="button round margin-top-4">GO 🚀 </a>     <a id="btn-like"></a>    <a id="btn-love"></a>
+                        <p>Double click to like</p>
+                        <p><a href="#" id="submit-btn1" class="button round margin-top-4">  GO </a>     <a id="btn-like"></a>    <a id="btn-love" style="font-size: 20px;"></a>
+                            
                     </form>
                     <!--NYT SEARCH-->
                     <form id="search-form-nyt">
                         <div class="grid-x grid-padding-x">
                             <div class="cell small-12">
-                                <label for="exampleFormControlInput2">Search for Best Sellers</label>
+                                <label class="lowerBig" for="exampleFormControlInput2">Search for Best Sellers</label>
                                 <input type="search-input-nyt" class="form-control" id="exampleFormControlInput2"
                                     placeholder="Search Author">
                                 <select id="format-input2" class="form-input w-100">
                                     <option value="author">By Author</option>
                                 </select>
-                                <p><a href="#" id="submit-btn2" class="button">GO </a><br />
+                                <p><a href="#" id="submit-btn2" class="button btn-grl">GO </a><br />
                             </div>
                         </div>
                     </form>
-                     <!-- Recently searched -->
-          <div class="p-search" id="p-search-b"></div>
+
+                    <!-- Recently searched -->
+                    <div class="" id="container-bookshelf">
+                        <div class="grid-x grid-padding-x">
+                            <div class="cell small-12">
+                                <h3 id="bold-letter"> Book Shelf</h3>
+                            </div>
+                        </div>
+                        <div class="p-search" id="p-search-b"></div>
+                    </div>
                 </div>
+
 
                 <!--Right Cell/Column = Cards Column-->
                 <div class="cell medium-8 medium-cell-block-y">
