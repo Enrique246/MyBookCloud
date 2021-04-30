@@ -35,6 +35,7 @@ THEN my click will be counted
 WHEN I want to search by best sellers' author I use the New York Times input and after clicking "Go"
 THEN I am again presented with best sellers of author selected.
 ```
+
 - What did you learn?
   - Fetch in JavaScript with third-party APIs
   - Usage of classList in JavaScript combined with Foundaton

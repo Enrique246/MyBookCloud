@@ -59,7 +59,7 @@ $(document).ready(function () {
                $('#results-container').append(titleElement, bodyContentEl);
                var author2 = $('#exampleFormControlInput2').val();
                var resultText =
-               $('#result-text')
+                  $('#result-text')
                resultText.text(author2)
                // console.log(NYResultTitle)
 
@@ -118,83 +118,62 @@ $(document).ready(function () {
                $('#results-container').append(GBResultTitle, GBbookImg, GBResults);
                // // // // document.cookie = 'cross-site-cookie=bar; SameSite=Lax';
             };
-         });         
-         $('#like').remove();
-         var GBlike = $("<button id='like' class='button' data-role='button' data-inline='true' data-mini='true' data-theme='b'><i class='far fa-thumbs-up'></i></button>").trigger('create');
-         $('#btn-like').append(GBlike);
+         });
+      $('#like').remove();
+      var GBlike = $("<button id='like' class='button' data-role='button' data-inline='true' data-mini='true' data-theme='b'><i class='far fa-thumbs-up'></i></button>").trigger('create');
+      $('#btn-like').append(GBlike);
 
-         $('#love').remove();
-         var GBlove = $("<button id='love' class='button' onclick='clickCounting()' type='button' data-role='button' data-inline='true' data-mini='true' data-theme='b'><i class='far fa-heart'></i> <span id='NumberLoves'> <strong>  </strong> </span> <span class='sr-only'> number of likes </span>  </button>").trigger('create');
-         $('#btn-love').append(GBlove);
-         $('#NumberLoves').html("Give Us Love <strong>" + localStorage.clickcount + "</strong>");
+      $('#love').remove();
+      var GBlove = $("<button id='love' class='button' onclick='clickCounting()' type='button' data-role='button' data-inline='true' data-mini='true' data-theme='b'><i class='far fa-heart'></i> <span id='NumberLoves'> <strong>  </strong> </span> <span class='sr-only'> number of likes </span>  </button>").trigger('create');
+      $('#btn-love').append(GBlove);
+      $('#NumberLoves').html("<strong> GIVE US LOVE: " + localStorage.clickcount + "</strong>");
    })
 });
 
-
-// let sSearch = function () {
-//  var array = JSON.parse(window.localStorage.getItem("savedBooks")) || [];//the "|| []" replaces possible null from localStorage with empty array
-// var value = "some value";
-// if(array.indexOf(value) == -1){
-//     array.push(value);
-//     window.localStorage.setItem("savedBooks", JSON.stringify(array));
-// }
-
-   //localStorage.setItem("savedBooks", JSON.stringify(savedBooks));
-//    let localStorageCheck = JSON.parse(window.localStorage.getItem("savedBooks")) || [];
-   
-//    if (localStorageCheck.indexOf(bookTitleEl)== -1) {
-//       localStorageCheck.push(savedBooks);
-//      window.localStorage.setItem("savedBooks", JSON.stringify(localStorageCheck));
-// }
-//console.log(localStorageCheck)
-   //};
-
- let bookTitleEl = $("#exampleFormControlInput1"); 
 let savedBooks = [];
-let like = $('#btn-like')
- let bookFormEl = $("#search-form-G");
- let pSearchEl = $("#p-search-b");
+let sSearch = function () {
+   localStorage.setItem("savedBooks", JSON.stringify(savedBooks));
+};
+let bookTitleEl = $("#exampleFormControlInput1");
+let bookFormEl = $("#search-form-G");
+let pSearchEl = $("#p-search-b");
 
-             console.log(bookTitleEl);
-   // var inputValue1 = $("#exampleFormControlInput1").val();    
-   // var currentSavedSearches = localStorage.getItem ("SavedSearches");          
-   // localStorage.setItem ("SavedSearches", currentSavedSearches + "," + inputValue1);
-  $('#btn-like').click(function () {  
-   let pSearch = function(pSearch) {
-      //pastSeEl = $("<ul><li><button></li></ul>");
-      pastSeEl = $("<button>");
-      pastSeEl.addClass("button secondary");
-      pastSeEl.text (pSearch);
-        pastSeEl.attr("data-book", pSearch);
-        pSearchEl.attr("type", "submit");
-        pSearchEl.prepend(pastSeEl);
-          }
+console.log(bookTitleEl);
+// var inputValue1 = $("#exampleFormControlInput1").val();    
+// var currentSavedSearches = localStorage.getItem ("SavedSearches");          
+// localStorage.setItem ("SavedSearches", currentSavedSearches + "," + inputValue1);
+$('#btn-like').click(function () {
+   let pSearch = function (pSearch) {
+      pastSeEl = $("<ul><li><button><span class='close'>x</span></li></ul>");
+      pastSeEl.text(pSearch);
+      pastSeEl.attr("data-book", pSearch);
+      pSearchEl.attr("type", "submit");
+      pSearchEl.prepend(pastSeEl);
+   }
    console.log(pSearch);
-           
-          let searchHandler = function (event) {
-            console.log("click");
-            event.preventDefault();
-          
-           let book = bookTitleEl.val().trim();
-            //console.log(book);
-             if (book) {
+
+   let searchHandler = function (event) {
+      console.log("click");
+      event.preventDefault();
+
+      let book = bookTitleEl.val().trim();
+      console.log(book);
+      if (book) {
          //  goTownWeather(town);
          //   go5Day(town);
-              //savedBooks.unshift({book});
+         savedBooks.unshift({ book });
          //       //The unshift() method 
          //       //Adds one or more elements to the beginning of an array and returns the new length of the array.
          //       //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift
          //       townTitleEl.value = "";
-             
-             //sSearch(); 
-             pSearch(book);
-          };
-          
-        }
-          
-          like.click(searchHandler);
-        
-      });
+
+         sSearch();
+         pSearch(book);
+      };
+   }
+
+   bookFormEl.click(searchHandler);
+});
 
 
 
@@ -202,14 +181,14 @@ let like = $('#btn-like')
 
 
 
-function clickCounting(){
-   if(typeof(Storage) !== "undefined"){
-      if (localStorage.clickcount){
-         localStorage.clickcount = Number(localStorage.clickcount)+1;
+function clickCounting() {
+   if (typeof (Storage) !== "undefined") {
+      if (localStorage.clickcount) {
+         localStorage.clickcount = Number(localStorage.clickcount) + 1;
       } else {
          localStorage.clickcount = 1;
       }
-      $('#NumberLoves').html("Give Us Love: <strong>" + localStorage.clickcount + "</strong>");
+      $('#NumberLoves').html("<strong> GIVE US LOVE: " + localStorage.clickcount + "</strong>");
    } else {
       $('#NumberLoves').html("null");
    }
