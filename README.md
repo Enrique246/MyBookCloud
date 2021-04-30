@@ -77,4 +77,4 @@ My Book Cloud app includes 2 search options for Google Books and NY Times best s
 - Like button displays the name of the search when double clicked.
 - Alert message working when no input has been submited.
 
-[Link to homework website](https://enrique246.github.io/project1/ "My Book Cloud")
+[Link to homework website](https://enrique246.github.io/project1-mybookcloud/ "My Book Cloud")
