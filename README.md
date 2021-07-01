@@ -1,5 +1,3 @@
-# Project 1
-
 ## My Book Cloud
 
 ### MBC introduction
