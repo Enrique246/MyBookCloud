@@ -42,7 +42,7 @@ THEN I am again presented with best sellers of author selected.
   - Displaying and removing information depending on the users input
   - Use of local storage
   
-### Lenguages Required:
+### Languages Required:
 - HTML
 - CSS
 - JavaScript
