@@ -11,9 +11,8 @@ MyBookCloud is the free online book search webpage everyone needs.
 
 Use this free online book finder tool to create your own customized list of selected searched authors.
 
-### Description
+### Summary
 
-This project allowed us to consolidate and apply the topics covered through this first 8 weeks (from HTML, CSS, JS through APIs). 
 In our project we choose to use Google Books APIs and New Tork Times API. 
 Our primary aim was to integrate both APIs to be able to do a search with a complete functional app.  
 We took the challenge to build a project that is the vivid example of a real work request I would get in a real job.
@@ -52,6 +51,8 @@ THEN I am again presented with best sellers of author selected.
 ## Usage
 
 My Book Cloud app includes 2 search options for Google Books and NY Times best sellers. A list of books, like button, a give love button that counts all the people that click in it. As well as a "Book Shelf", where the name of the book you are searching for will appear for further user comfort.
+
+![MyBook](mybookcloud.png)
 
 ## Resources
 - https://developer.mozilla.org/es/docs/Web/API/Fetch_API/Using_Fetch
